@@ -9,34 +9,48 @@ const router = express.Router();
 const request = require('request');
 const hfcService = require('../service/HfcService');
 const o2x = require('object-to-xml');
+const log4js = require('log4js');
+const auth = require('../utils/AuthUtils.js').authorizeAll;
+const authLei = require('../utils/AuthUtils.js').authorizeLei;
+
+log4js.configure({
+  appenders: [
+    { type: 'console' },
+    { type: 'file', filename: 'logs/app.log', category: 'log' }
+  ],replaceConsole: true
+});
+const logger = log4js.getLogger('log');
+
 
 module.exports = router;
 
 // define the home page route
-router.get('/getFIManagers',  (req, res) => {
+router.get('/getFIManagers',auth,  (req, res) => {
     hfcService.getFiManagers("testFiId")
     .then(result =>{
-        res.status(200).send(result);
+        res.status(200).json(result);
     })
     .catch(err=>{
       console.log(err);
+      logger.error(err);
       res.status(500).send(err);
     })
 });
 
-router.get('/getPending',  (req, res) => {
+router.get('/getPending',authLei,  (req, res) => {
     hfcService.getPending("testFiId")
     .then(result =>{
-        res.status(200).send(result);
+        res.status(200).json(result);
     })
     .catch(err=>{
       console.log(err);
+      logger.error(err);
       res.status(500).send(err);
     })
 });
 
 
-router.get('/report/:fiManager/:contract',  (req, res) => {
+router.get('/report/:fiManager/:contract',auth,  (req, res) => {
     let fiManager = req.params.fiManager;
     let contract = req.params.contract;
 
@@ -50,13 +64,14 @@ router.get('/report/:fiManager/:contract',  (req, res) => {
     })
     .catch(err=>{
       console.log(err);
+      logger.error(err);
       res.status(500).send(err);
     })
 });
 
 
 
-router.get('/addFIManagers/:fiManager',  (req, res) => {
+router.get('/addFIManagers/:fiManager',auth,  (req, res) => {
     let fiManagerId =  req.params.fiManager;
     hfcService.addFIManager(fiManagerId)
     .then(result =>{
@@ -64,13 +79,14 @@ router.get('/addFIManagers/:fiManager',  (req, res) => {
     })
     .catch(err=>{
       console.log(err);
+      logger.error(err);
       res.status(500).send(err);
     })
 });
 
 
 
-router.get('/addActus/:fiManager',  (req, res) => {
+router.get('/addActus/:fiManager', auth, (req, res) => {
   let fiManagerId =  req.params.fiManager;
 
   let event1 = {
@@ -115,11 +131,33 @@ router.get('/addActus/:fiManager',  (req, res) => {
   }
 
 
+    console.log(actusJSON);
+
     hfcService.addActus(fiManagerId,actusJSON)
     .then(result =>{
         res.status(200).send(result);
     })
     .catch(err=>{
+      logger.error(err);
+      console.log(err);
+      res.status(500).send(err);
+    })
+});
+
+
+
+
+router.post('/addActus/:fiManager', auth,  (req, res) => {
+  let fiManagerId =  req.params.fiManager;
+  let actusJSON = req.body;
+  // logger.info(fiManagerId);
+  // logger.info(actusJSON);
+  hfcService.addActus(fiManagerId,actusJSON)
+    .then(result =>{
+        res.status(200).send(result);
+    })
+    .catch(err=>{
+      logger.error(err);
       console.log(err);
       res.status(500).send(err);
     })

@@ -1,0 +1,99 @@
+[2017-07-06 17:07:23.099] [ERROR] log - TypeError: First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.
+    at fromObject (buffer.js:262:9)
+    at Function.Buffer.from (buffer.js:101:10)
+    at new Buffer (buffer.js:80:17)
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:2301:40
+    at Array.map (native)
+    at prepend (/home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:2301:14)
+    at TransactionContext.newInvokeOrQueryTransaction (/home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1564:32)
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1019:18
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1179:20
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1723:17
+[2017-07-06 17:09:29.334] [INFO] log - fiManagerId
+[2017-07-06 17:09:37.781] [ERROR] log - TypeError: First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.
+    at fromObject (buffer.js:262:9)
+    at Function.Buffer.from (buffer.js:101:10)
+    at new Buffer (buffer.js:80:17)
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:2301:40
+    at Array.map (native)
+    at prepend (/home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:2301:14)
+    at TransactionContext.newInvokeOrQueryTransaction (/home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1564:32)
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1019:18
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1179:20
+    at /home/nikos/blueMixProjects/regTech/node_modules/hfc/lib/hfc.js:1723:17
+[2017-07-06 17:16:16.345] [INFO] log - fiManagerId
+[2017-07-06 17:16:16.366] [INFO] log - { Id: 'testId',
+  Validated: false,
+  State: 1,
+  Particiapant: 'nikos',
+  ParticipatingPartyContractRole: 'testParticipatingPartyContractRole',
+  UniqueTransactionIdentifier: '',
+  UnderlyingInformation: '',
+  ReportingDateAndTime: '',
+  ReportingPartyLedgerAddress: '',
+  ContractPartyLedgerAddress: '',
+  ReportingEntityID: '',
+  ContractPartyID: '',
+  ContractType: '',
+  ReportingPartyContractRole: '',
+  DealDate: '',
+  EffectiveStartOfDate: '',
+  MakeaturityDate: '',
+  CADateOfInterestPayment: '',
+  NotionalPrincipal: '',
+  CycleOfInterestPayment: '',
+  NominalInterestRate: '',
+  Currency: '',
+  StatusDate: '',
+  InitialExchangeDate: '',
+  PremiunDiscountAtIED: '',
+  OptionExcerciseEndDate: '',
+  DayCountConvention: '',
+  AnchorDateOfRateReset: '',
+  CycleOfRateReset: '',
+  RateSpread: '',
+  MarketObjectCodeRateReset: '',
+  LegalEntityIDCounterparty: '',
+  LegalEntity: '',
+  DynamicNominalInterestDate: '',
+  MaturityDate: '',
+  DTDIdentifier: '',
+  States: { StateList: [ [Object], [Object] ] } }
+[2017-07-06 17:19:19.945] [INFO] log - fiManagerId
+[2017-07-06 17:19:19.950] [INFO] log - { Id: 'testId',
+  Validated: false,
+  State: 1,
+  Particiapant: 'nikos',
+  ParticipatingPartyContractRole: 'testParticipatingPartyContractRole',
+  UniqueTransactionIdentifier: '',
+  UnderlyingInformation: '',
+  ReportingDateAndTime: '',
+  ReportingPartyLedgerAddress: '',
+  ContractPartyLedgerAddress: '',
+  ReportingEntityID: '',
+  ContractPartyID: '',
+  ContractType: '',
+  ReportingPartyContractRole: '',
+  DealDate: '',
+  EffectiveStartOfDate: '',
+  MakeaturityDate: '',
+  CADateOfInterestPayment: '',
+  NotionalPrincipal: '',
+  CycleOfInterestPayment: '',
+  NominalInterestRate: '',
+  Currency: '',
+  StatusDate: '',
+  InitialExchangeDate: '',
+  PremiunDiscountAtIED: '',
+  OptionExcerciseEndDate: '',
+  DayCountConvention: '',
+  AnchorDateOfRateReset: '',
+  CycleOfRateReset: '',
+  RateSpread: '',
+  MarketObjectCodeRateReset: '',
+  LegalEntityIDCounterparty: '',
+  LegalEntity: '',
+  DynamicNominalInterestDate: '',
+  MaturityDate: '',
+  DTDIdentifier: '',
+  States: { StateList: [ [Object], [Object] ] } }
